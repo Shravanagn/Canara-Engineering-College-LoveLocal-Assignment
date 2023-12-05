@@ -1,0 +1,36 @@
+
+import java.util.*;
+
+public class program2
+{
+	static void find(int nums[],int n)
+	{
+		int flag=0;
+		for(int i=0;i<n;i++)
+		{
+			int count=0;
+			for(int j=i;j<n;j++)
+			{
+				if(nums[i]==nums[j])
+			      count++;
+			}
+			if(count>n/3)
+			{
+				System.out.print(nums[i]+" ");
+				flag=1;
+			}
+		}
+		if(flag==0)
+		{
+			System.out.println("No element appeard more than [n/3]times");
+		}
+		
+	}
+	public static void main(String[] args)
+	{
+		int nums[]= {1,2};
+		int n=nums.length;
+		find(nums,n);
+		
+	}
+}

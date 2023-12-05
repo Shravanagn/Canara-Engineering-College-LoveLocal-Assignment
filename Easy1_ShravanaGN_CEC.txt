@@ -1,0 +1,33 @@
+
+import java.util.Scanner;
+
+public class program1
+{
+	 public int lengthOfLastWord(String S)
+	    {
+	        boolean flag = false;
+	        int len = 0;
+	        for (int i = S.length() - 1; i >= 0; i--) {
+	            if (Character.isLetter(S.charAt(i))) 
+	            {
+	                flag = true;
+	                len++;
+	            }
+	            else
+	            {
+	                if (flag == true)
+	                    return len;
+	            }
+	        }
+	        return len;
+	    }
+	 public static void main(String[] args)
+	    {
+		    Scanner s=new Scanner(System.in);
+	        System.out.println("Enter the input String");
+	        String S=s.nextLine();
+	        
+	        program1 p = new program1();
+	        System.out.println(p.lengthOfLastWord(S));
+	    }
+}
